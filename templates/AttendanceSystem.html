@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Employee Attendance</title>
+	<style>
+		.header {
+		  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+		  grid-area: header;
+		  overflow: hidden;
+		  background-color: #d76b49;
+		  padding: 20px 10px;
+		  margin :-10px;
+		}
+		
+		.header a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 12px;
+		  text-decoration: none;
+		  font-size: 18px; 
+		  line-height: 25px;
+		  border-radius: 4px;
+		}
+		
+		.header a.logo {
+		  font-size: 25px;
+		  font-weight: bold;
+		}
+		
+		.header a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+		
+		.header a.active {
+		  background-color: dodgerblue;
+		  color: white;
+		}
+		
+		.header-right {
+		  float: right;
+		}
+		</style>
+</head>
+<center>
+	<div class="header">
+		<a href="#default" class="logo">JCTY</a>
+		<div class="header-right">
+		  <a class="active" href="{{ url_for('home') }}">Home</a>
+		  <a href="#contact">Contact</a>
+		  <a href="/about">About</a>
+		</div>
+	  </div>
+	<font color="black" size="6" style="font-family: Comic Sans MS">
+
+		<h1 style="color: DarkMagenta; font-size: 80px;">Attendance System</h1>
+
+		<body bgcolor="lightgrey">
+			
+
+			<form action="/addemp1" autocomplete="on" method = "POST" enctype="multipart/form-data">
+
+				
+
+		  		Employee ID:<input style="height:25px;font-size:20pt;font-family: Century Gothic; width: 400px;height : 30px;color:grey;" type="number" name="emp_id" autofocus size="40"><br><br><br>
+
+		  		Employee Name:<input style="height:25px;font-size:20pt;font-family: Century Gothic; width: 400px;height : 30px;color:grey;" type="text" name="first_name" ><br><br><br>
+
+
+				  Current Date:
+				  <input style="font-size: 25px; width: 400px;height : 30px;";type="text" id="currentDate", name="currentDate1", >
+				  <br><br>
+				  <script>
+				  var today = new Date();
+				  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+				  document.getElementById("currentDate").value = date;
+				  </script><br>
+
+					Current Time:
+					<input style="font-size: 25px; width: 400px;height : 30px;";type="text" id="currentTime" , name="currentTime1">
+					<br><br>
+					<script>
+					var today = new Date();
+					var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+					document.getElementById("currentTime").value = time;
+					</script><br>
+
+
+
+		  		<button type="submit" style="background: Salmon; height: 70px; width: 450px; color: white; size: 5; font:oblique;">UPDATE DATABASE</button>
+
+			</form>
+
+		</body>
+
+	</font>
+</center>
+</html>
